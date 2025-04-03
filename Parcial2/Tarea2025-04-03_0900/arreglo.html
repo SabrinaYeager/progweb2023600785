@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Arreglo Compuesto</title>
+    <script>
+        function procesarArreglo() {
+            const arreglo = [42, "Sabrina", true, 18, "Elizabeth", false, 5, "!", true];
+
+            let sumaNumeros = 0;
+            let concatenacionCadenas = "";
+            let cantidadBooleanos = 0;
+
+            // Recorremos el arreglo con forEach
+            arreglo.forEach(elemento => {
+                if (typeof elemento === "number") {
+                    sumaNumeros += elemento; // Sumamos los números
+                } else if (typeof elemento === "string") {
+                    concatenacionCadenas += elemento + " "; // Concatenamos cadenas
+                } else if (typeof elemento === "boolean") {
+                    cantidadBooleanos++; // Contamos valores booleanos
+                }
+            });
+
+            // Mostramos los resultados en el documento
+            document.getElementById("numeros").innerText = "Suma de números: " + sumaNumeros;
+            document.getElementById("cadenas").innerText = "Concatenación de cadenas: " + concatenacionCadenas.trim();
+            document.getElementById("booleanos").innerText = "Cantidad de valores booleanos: " + cantidadBooleanos;
+        }
+    </script>
+</head>
+<body onload="procesarArreglo()">
+    <h2>Resultados del Arreglo</h2>
+    <p id="numeros"></p>
+    <p id="cadenas"></p>
+    <p id="booleanos"></p>
+</body>
+</html>

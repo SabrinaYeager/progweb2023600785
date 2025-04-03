@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Meses del Año</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #a8bbc8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>12 meses del año con su Ordinal</h2>
+    <table id="tablaMeses">
+        <tr>
+            <th>Ordinal</th>
+            <th>Mes</th>
+        </tr>
+    </table>
+
+    <script>
+       
+        const meses = [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+        
+        const ordinales = [
+            "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto", 
+            "Séptimo", "Octavo", "Noveno", "Décimo", "Undécimo", "Duodécimo"
+        ];
+        
+        let filas = "";
+        for (let i = 0; i < meses.length; i++) {
+            filas += <tr><td>${ordinales[i]}</td><td>${meses[i]}</td></tr>;
+        }
+        
+        document.getElementById("tablaMeses").innerHTML += filas;
+    </script>
+</body>
+</html>
